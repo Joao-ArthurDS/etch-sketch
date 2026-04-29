@@ -25,8 +25,24 @@ function resizeElement(){
 
             div.style.width = `${newWidth}px`;
             div.style.height = `${newHeight}px`;
-            div.innerHTML = `${i} - ${j}`
+            div.innerHTML = `${i} - ${j}`;
+            const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            div.style.backgroundColor = randomColor;
+            div.style.opacity = '0%';
+
+
+            div.addEventListener('mouseover', paintBox);
+
             grid.appendChild(div);
         }
     }
+}
+
+function paintBox(){
+  const element = document.getElementById("myElement");
+  let currentOpacity = parseFloat(window.getComputedStyle(element).opacity) || 0;
+  
+  if (currentOpacity < 1) {
+    element.style.opacity = (currentOpacity + 0.1).toString();
+  }
 }
