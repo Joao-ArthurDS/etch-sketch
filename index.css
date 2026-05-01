@@ -1,6 +1,9 @@
-body{
+html, body{
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #grid{
@@ -10,5 +13,5 @@ body{
 .box{
     margin: 0;
     padding: 0;
-    border: 1px solid green;    
+    /* border: 1px solid green;     */
 }

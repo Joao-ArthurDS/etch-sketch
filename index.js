@@ -15,8 +15,8 @@ if (grid.childElementCount > 0){
 function resizeElement(){
     grid.replaceChildren();
 
-    const newWidth = (grid.clientWidth / x) -2; //minus 2 to set the border at 1px
-    const newHeight = (grid.clientHeight / x) -2;
+    const newWidth = (grid.clientWidth / x); //minus 2 to set the border at 1px
+    const newHeight = (grid.clientHeight / x) ;
 
     for (let i = 0; i < x; i++){
         for (let j = 0; j < x; j++){
@@ -39,7 +39,7 @@ function resizeElement(){
 }
 
 function paintBox(){
-  const element = document.getElementById("myElement");
+  const element = event.currentTarget; // console.log(event.currentTarget.innerHTML);
   let currentOpacity = parseFloat(window.getComputedStyle(element).opacity) || 0;
   
   if (currentOpacity < 1) {
